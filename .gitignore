@@ -1,3 +1,4 @@
 # Ignore Folders
-Temp/
+/myenv
+/temp
 conversion_errors.log

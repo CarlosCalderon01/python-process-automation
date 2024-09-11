@@ -18,15 +18,15 @@ if "%opcion%"=="0" (
     echo Saliendo...
     exit /b
 ) else if "%opcion%"=="1" (
-    python src\delete-repeat-all-subfolders.py
+    python src\detect-and-delete-repeat.py
 ) else if "%opcion%"=="2" (
-    python src\change-format-all-subfolders.py
+    python src\change-format.py
 ) else if "%opcion%"=="3" (
-    python src\change-name-all-subfolders.py
+    python src\change-name-useNameFolder.py
 ) else if "%opcion%"=="4" (
-    python src\change-name-all-subfolders-using-counter.py
+    python src\change-name-use-counter.py
 ) else if "%opcion%"=="5" (
-    python src\move-repeat-in-folder.py
+    python src\detect-repeat.py
 ) else if "%opcion%"=="6" (
     echo Opción 6 seleccionada.
 ) else (
