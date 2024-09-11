@@ -30,13 +30,19 @@ def write_structure_to_file(dir_path, output_file):
         f.write(structure)
     print(f'Estructura de carpetas guardada en: {output_file}')
 
-# Ruta del proyecto
-project_root = os.path.join(os.getcwd(), 'src')
-# Ruta para guardar el archivo de salida
-output_file_path = os.path.join('temp', 'folder_structure.txt')
+if __name__ == "__main__":
+    # Solicita al usuario la ruta del proyecto
+    project_root = input("Introduce la ruta del directorio que quieres analizar: ")
 
-# Crea la carpeta 'temp' si no existe
-os.makedirs('temp', exist_ok=True)
+    # Verifica si la ruta proporcionada es válida
+    if not os.path.isdir(project_root):
+        print("La ruta proporcionada no es válida.")
+    else:
+        # Solicita el nombre del archivo de salida
+        output_file_path = input("Introduce la ruta completa para guardar el archivo de estructura (por ejemplo, 'temp/folder_structure.txt'): ")
 
-# Escribe la estructura de carpetas en el archivo de salida
-write_structure_to_file(project_root, output_file_path)
+        # Crea la carpeta de salida si no existe
+        os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
+
+        # Escribe la estructura de carpetas en el archivo de salida
+        write_structure_to_file(project_root, output_file_path)

@@ -7,7 +7,7 @@ echo ================================
 echo Python Virtual Environment Manager
 echo ================================
 echo 0. Salir
-echo 1. Crear un entorno virtual (venv)
+echo 1. Crear un entorno virtual (myenv)
 echo 2. Activar el entorno virtual
 echo 3. Instalar dependencias desde requirements.txt
 echo 4. Listar dependencias actuales
@@ -23,9 +23,9 @@ if "%opcion%"=="0" (
     echo Saliendo...
     exit /b
 ) else if "%opcion%"=="1" (
-    set "command=python -m venv venv"
+    set "command=python -m venv myenv"
 ) else if "%opcion%"=="2" (
-    set "command=call venv\Scripts\activate"
+    set "command=call myenv\Scripts\activate"
 ) else if "%opcion%"=="3" (
     set "command=pip install -r requirements.txt"
 ) else if "%opcion%"=="4" (
@@ -35,7 +35,7 @@ if "%opcion%"=="0" (
 ) else if "%opcion%"=="6" (
     set "command=deactivate"
 ) else if "%opcion%"=="7" (
-    set "command=rd /s /q venv"
+    set "command=rd /s /q myenv"
 ) else (
     echo Comando no reconocido, por favor intente nuevamente.
     pause
