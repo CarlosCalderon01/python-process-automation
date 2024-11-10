@@ -11,7 +11,7 @@ def change_format_and_delete(folder_path):
     for main_path, sub_folders, files in os.walk(folder_path):
         for name_file in files:
             # Verifica si el archivo es una imagen y no es JPEG ni GIF
-            if name_file.lower().endswith(('.jpg', '.png', '.bmp', '.webp')) and not name_file.lower().endswith(('.jpeg', '.gif')):
+            if name_file.lower().endswith(('.jpg', '.png', '.bmp', '.webp')) and not name_file.lower().endswith(('.jpeg', '.gif', '.jpg')):
                 path_file = os.path.join(main_path, name_file)
 
                 try:

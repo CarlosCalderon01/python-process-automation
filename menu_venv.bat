@@ -14,6 +14,8 @@ echo 4. Listar dependencias actuales
 echo 5. Guardar dependencias actuales en requirements.txt
 echo 6. Desactivar el entorno virtual
 echo 7. Eliminar el entorno virtual
+echo 8. Ejecutar Create_Executables.py
+echo 9. Ejecutar Draw_Folder_Layout.py
 echo ================================
 set /p opcion="Ingrese el número del comando: "
 
@@ -36,6 +38,10 @@ if "%opcion%"=="0" (
     set "command=deactivate"
 ) else if "%opcion%"=="7" (
     set "command=rd /s /q myenv"
+) else if "%opcion%"=="8" (
+    set "command=python Create_Executables.py"
+) else if "%opcion%"=="9" (
+    set "command=python Draw_Folder_Layout.py"
 ) else (
     echo Comando no reconocido, por favor intente nuevamente.
     pause

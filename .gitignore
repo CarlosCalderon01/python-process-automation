@@ -1,4 +1,11 @@
 # Ignore Folders
-/myenv
-/temp
+/myenv/
+/temp/
+/build/
+/dist/
+
+# Ignore tipo de archivos
+*.spec
+
+# Ignore archivos especificos
 conversion_errors.log

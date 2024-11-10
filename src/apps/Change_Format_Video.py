@@ -27,6 +27,9 @@ def convert_videos_to_mp4(folder_path):
                     # Convierte y guarda el video en formato MP4
                     video.write_videofile(new_path_file, codec="libx264")
                     
+                    # Cierra el video para liberar recursos
+                    video.close()
+
                     # Muestra un mensaje indicando la conversión
                     print(f"Convertido: {name_file} a {new_path_file}")
 
@@ -34,8 +37,11 @@ def convert_videos_to_mp4(folder_path):
                     os.remove(path_file)
                     print(f"Borrado: {name_file}")
 
+                except PermissionError:
+                    # Muestra un mensaje si hay problemas de permisos y continúa
+                    print(f"Permiso denegado para el archivo {name_file}. Se omite y continúa.")
                 except Exception as e:
-                    # Muestra un mensaje si hay un error en la conversión
+                    # Muestra un mensaje si hay otro tipo de error en la conversión
                     print(f"Error al convertir el video {name_file}: {e}")
 
 if __name__ == "__main__":
