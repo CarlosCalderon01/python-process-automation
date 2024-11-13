@@ -9,10 +9,11 @@ echo 1. Delete repeat in all sub folders - Picture
 echo 2. Delete repeat in all sub folders - Video
 echo 3. Change format in all sub folders - Picture
 echo 4. Change format in all sub folders - Video
-echo 5. Detect repeat in all sub folders - Picture
+echo 5. Detect repeat in all sub folders - Picture (percentage)
 echo 6. Detect (folders, Sub folders, Files).
 echo 7. Detect (folders, Sub folders).
 echo 8. Change format in all sub folders - Picture (JPG)
+echo 9. Charge All files (.py) in (.exe)
 
 echo ================================
 set /p opcion="Ingrese el número del comando:"
@@ -36,6 +37,8 @@ if "%opcion%"=="0" (
     python src\apps\Draw_Folder_Layout.py
 ) else if "%opcion%"=="8" (
     python src\apps\Change_Format_Picture_JPG.py
+) else if "%opcion%"=="9" (
+    python Create_Executables.py
 ) else (
     echo Comando no reconocido, por favor intente nuevamente.
     pause
